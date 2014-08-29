@@ -2,13 +2,17 @@
 // $Effeckt Captions
 
 // @dependencies
+// effeckt-captions-mixins
 // js/libs/jquery-2.0.3.min.js
 // js/modules/captions.js
 // ==========================================================================
 
+@import "effeckt-captions-mixins";
 
 $effeckt-caption-transition-duration: 500ms !default;
 
+// #FAF7F7
+// 5rem calc(50% - 400px)
 
 /*
 
@@ -79,10 +83,7 @@ offset | guillotine-reverse | half-slide | sqkwoosh | tunnel>"
     &:hover,
     &:active,
     &.active {
-      figcaption {
-        opacity: 1;
-        transform: translateY(0);
-      }
+      @include effecktQrtrSlideUp;
     }
   }
 
@@ -114,15 +115,7 @@ offset | guillotine-reverse | half-slide | sqkwoosh | tunnel>"
     &:hover,
     &:active,
     &.active {
-      .effeckt-figcaption-wrap {
-        opacity: 1;
-        transition-delay: 0.25s;
-      }
-
-      img {
-        transform: scale(0.5) translateY(-80px);
-        transition-delay: 0;
-      }
+      @include effecktSqkwoosh;
     }
   }
 
@@ -139,10 +132,7 @@ offset | guillotine-reverse | half-slide | sqkwoosh | tunnel>"
     &:hover,
     &:active,
     &.active {
-      figcaption {
-        opacity: 1;
-        transform: translateX(0);
-      }
+      @include effecktQrtrSlide;
     }
   }
 
@@ -159,9 +149,7 @@ offset | guillotine-reverse | half-slide | sqkwoosh | tunnel>"
     &:hover,
     &:active,
     &.active {
-      figcaption {
-        opacity: 1;
-      }
+      @include effecktCaptionFade;
     }
   }
 
@@ -178,10 +166,7 @@ offset | guillotine-reverse | half-slide | sqkwoosh | tunnel>"
     &:hover,
     &:active,
     &.active {
-      figcaption {
-        transform: translateX(0) rotate(0deg);
-        opacity: 1;
-      }
+      @include effecktQrtrFall;
     }
   }
 
@@ -204,14 +189,7 @@ offset | guillotine-reverse | half-slide | sqkwoosh | tunnel>"
     &:hover,
     &:active,
     &.active {
-      figcaption {
-        transform: translateX(0);
-        opacity: 1;
-      }
-
-      .effeckt-figcaption-wrap {
-        transform: translateX(0);
-      }
+      @include effecktQrtrTwoStep;
     }
   }
 
@@ -234,14 +212,7 @@ offset | guillotine-reverse | half-slide | sqkwoosh | tunnel>"
     &:hover,
     &:active,
     &.active {
-      figcaption {
-        transform: translateX(0);
-        opacity: 1;
-      }
-
-      img {
-        transform: translateX(100%);
-      }
+      @include effecktCoverPushRight;
     }
   }
 
@@ -262,10 +233,7 @@ offset | guillotine-reverse | half-slide | sqkwoosh | tunnel>"
     &:hover,
     &:active,
     &.active {
-      figcaption {
-        transform: translateY(0);
-        opacity: 1;
-      }
+      @include effecktCoverSlideTop;
     }
   }
 
@@ -287,14 +255,7 @@ offset | guillotine-reverse | half-slide | sqkwoosh | tunnel>"
     &:hover,
     &:active,
     &.active {
-      figcaption {
-        transform: scale(1);
-        opacity: 1;
-      }
-
-      img {
-        transform: scale(1.1);
-      }
+      @include effecktQrtrZoom;
     }
   }
 
@@ -439,12 +400,7 @@ offset | guillotine-reverse | half-slide | sqkwoosh | tunnel>"
     &:hover,
     &:active,
     &.active {
-      figcaption {
-        transform: translate(15px, 15px);
-        opacity: 1;
-        z-index: 100; //prevent overlap
-        overflow: hidden;
-      }
+      @include effecktCaptionOffset;
     }
   }
 
@@ -469,9 +425,7 @@ offset | guillotine-reverse | half-slide | sqkwoosh | tunnel>"
     &:hover,
     &:active,
     &.active {
-      img {
-        transform: translateY(-100%);
-      }
+      @include effecktCaptionGuillotine;
     }
   }
 
@@ -495,13 +449,7 @@ offset | guillotine-reverse | half-slide | sqkwoosh | tunnel>"
     &:hover,
     &:active,
     &.active {
-      img {
-        transform: translateY(-50%);
-      }
-
-      figcaption {
-        transform: translateY(50%);
-      }
+      @include effecktCaptionSlide;
     }
   }
 

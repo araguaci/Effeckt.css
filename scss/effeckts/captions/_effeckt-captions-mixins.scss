@@ -1,0 +1,123 @@
+@mixin effecktCaptionFade($opacity: 1) {
+  figcaption {
+    opacity: $opacity;
+  }
+}
+
+@mixin effecktCaptionOffset($translateX: 15px, $translateY: 15px, $opacity: 1) {
+  figcaption {
+    transform: translate($translateX, $translateY);
+    opacity: $opacity;
+    z-index: 100; //prevent overlap
+    overflow: hidden;
+  }
+}
+
+@mixin effecktCaptionSlide($translateStartY: -50%, $translateEndY: 50%) {
+  img {
+    transform: translateY($translateStartY);
+  }
+
+  figcaption {
+    transform: translateY($translateEndY);
+  }
+}
+
+@mixin effecktCaptionGuillotine($translateY: -100%) {
+  img {
+    transform: translateY($translateY);
+  }
+}
+
+@mixin effecktQrtrSlideUp($opacity: 1, $translateY: 0) {
+  figcaption {
+    opacity: $opacity;
+    transform: translateY($translateY);
+  }
+}
+
+@mixin effecktSqkwoosh($opacity: 1, $delay: 0.25s, $scale: 0.5, $translateY: -80px) {
+  img {
+    transform: scale($scale) translateY($translateY);
+    transition-delay: 0;
+  }
+
+  .effeckt-figcaption-wrap {
+    opacity: $opacity;
+    transition-delay: $delay;
+  }
+}
+
+@mixin effecktQrtrSlide($opacity: 1, $translateX: 0) {
+  figcaption {
+    opacity: $opacity;
+    transform: translateX($translateX);
+  }
+}
+
+@mixin effecktQrtrFall($translateX: 0, $rotate: 0, $opacity: 1) {
+  figcaption {
+    transform: translateX($translateX) rotate($rotate);
+    opacity: $opacity;
+  }
+}
+
+@mixin effecktQrtrTwoStep($translateX: 0, $opacity: 1) {
+  figcaption {
+    transform: translateX($translateX);
+    opacity: $opacity;
+  }
+
+  .effeckt-figcaption-wrap {
+    transform: translateX($translateX);
+  }
+}
+
+@mixin effecktCoverPushRight($translateStartX: 0, $translateEndX: 100%, $opacity: 1) {
+  figcaption {
+    transform: translateX($translateStartX);
+    opacity: $opacity;
+  }
+
+  img {
+    transform: translateX($translateEndX);
+  }
+}
+
+@mixin effecktCoverSlideTop($translateY: 0, $opacity: 1) {
+  figcaption {
+    transform: translateY($translateY);
+    opacity: $opacity;
+  }
+}
+
+@mixin effecktQrtrZoom($scaleStart: 1, $scaleEnd: 1.1, $opacity: 1) {
+  figcaption {
+    transform: scale($scaleStart);
+    opacity: $opacity;
+  }
+
+  img {
+    transform: scale($scaleEnd);
+  }
+}
+
+@mixin effecktRevolvingDoor($rotate-dir: y, $perspective:1300px, $rotate-start:0, $rotate-end: -180deg) {
+  @if $rotate-dir == y {
+    figcaption {
+      transform: perspective($perspective) rotateY($rotate-start);
+    }
+
+    img {
+      transform: perspective($perspective) rotateY($rotate-end);
+    }
+  } @else {
+    figcaption {
+      transform: perspective($perspective) rotateX($rotate-start);
+    }
+
+    img {
+      transform: perspective($perspective) rotateX($rotate-end);
+    }
+  }
+}
